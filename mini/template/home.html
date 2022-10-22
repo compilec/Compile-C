@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{% block title %}CompileC{% endblock %}</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+
+
+<style>
+
+
+.well {
+background:#FFF8F3;
+}
+
+
+#site{
+  font: 400 13px/0.8 'Great Vibes', Helvetica, sans-serif;
+  color: #fff;
+  text-shadow: 4px 4px 3px rgba(0,0,0,0.1); 
+}
+#site1{
+  font: 400 35px/0.8 'Great Vibes', Helvetica, sans-serif;
+  color: black;
+  text-shadow: 4px 4px 3px rgba(0,0,0,0.1); 
+}
+#mysite2{
+  font: 400 30px/0.8 'Great Vibes', Helvetica, sans-serif;
+  color: black;
+  text-shadow: 4px 4px 3px rgba(0,0,0,0.1); 
+  text-align: center;
+}
+
+#content {  
+  background: url('https://thumbs.dreamstime.com/b/fondo-del-tri%C3%A1ngulo-anaranjado-y-marr%C3%B3n-56253508.jpg') repeat center center fixed; 
+  -webkit-background-size:  10px;
+  -moz-background-size:  10px;
+  -o-background-size:   10px;
+  background-size:  10px;
+  min-height:540px;
+}
+
+#mybody{
+min-height:500px;
+}
+
+
+#btn-1{
+color:black;
+font-weight:bold;
+}
+    
+.navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      background-color: #B26320;
+    }
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    color: #FFD7B8;
+    background: #9C5723;
+}    
+
+.row.content {
+      padding-top:20px;
+      background-color: transparent; 
+      background: url('https://thumbs.dreamstime.com/b/fondo-del-tri%C3%A1ngulo-anaranjado-y-marr%C3%B3n-56253508.jpg') repeat center center fixed; 
+  -webkit-background-size:  10px;
+  -moz-background-size:  10px;
+  -o-background-size:  10px;
+  background-size:  10px;
+  min-height:140px; 
+    }
+    
+
+footer {
+      background-color: #9C5723;
+      color: white;
+      padding: 15px;
+    }
+    
+
+@media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+
+  </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top" >
+  <div class="container-fluid" >
+    <div class="navbar-header" >
+
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/home" id="site"><font size="6%" color="white">compileC.</font></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+
+      <ul class="nav navbar-nav">
+{%block active%}
+        <li class="active"><a style="color:#FFD7B8" onMouseOver="this.style.color='#FFFFFF'" onMouseOut="this.style.color='#FFD7B8'" href="/home/">Home</a></li>
+        <li><a style="color:#FFD7B8" onMouseOver="this.style.color='#FFFFFF'" onMouseOut="this.style.color='#FFD7B8'"  href="/about">About</a></li>
+
+        <li><a style="color:#FFD7B8" onMouseOver="this.style.color='#FFFFFF'"onMouseOut="this.style.color='#FFD7B8'" href="/compiler/">Compiler</a></li>
+
+        <li><a style="color:#FFD7B8" onMouseOver="this.style.color='#FFFFFF'" onMouseOut="this.style.color='#FFD7B8'" href="/contact">Contact Us</a></li>
+
+<li><a style="color:#FFD7B8" onMouseOver="this.style.color='#FFFFFF'" onMouseOut="this.style.color='#FFD7B8'" href="/programs">Programs</a></li>
+      </ul>
+{%endblock%}
+
+      <ul class="nav navbar-nav navbar-right" style="font-size:15px;margin:6px;padding:4px">
+
+{% if user.is_authenticated %}
+
+
+     <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="padding:4px;background:transparent;border:white;"> {{ user.username }}
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="{% url 'logout' %}"> <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+  </ul>
+</div>
+   
+
+{% else %}
+
+
+<a href="{% url 'signup' %}"><button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-plus"></span> Sign up
+        </button></a>
+
+<a href="{% url 'login' %}"><button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-log-in"></span> Login
+        </button></a>
+    {% endif %}
+  </header>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid text-left" style="padding-top:50px">    
+  <div class="row content" id="lefts">
+{% block leftsb %}
+    <div class="col-sm-2 sidenav">
+
+<nav>
+<div class="well">
+<center><font id="mysite2">Syllabus</font></center>
+    <ul class="nav">
+<br>
+	   <a href="#" class="toggle-custom" id="btn-1" data-toggle="collapse" data-target="#submenu1" aria-expanded="false"><li>Introduction to Computers    </a>
+			  <ul class="nav collapse" id="submenu1" role="menu" aria-labelledby="btn-1">
+				  <li><a href="/i1/">Computer Systems</a></li>
+				  <li><a href="/i2/">Computing Environments</a></li>
+				  <li><a href="/i3/">Computer Languages</a></li>
+				  <li><a href="/i4/">Creating and Running Programs</a></li>
+				  <li><a href="/i5/">Software Development</a></li>
+				  <li><a href="/i6/">Flow charts</a></li>
+			  </ul>
+		</li>
+<a href="/ii1/" class="toggle-custom" id="btn-1" data-toggle="collapse" data-target="#submenu2" aria-expanded="false"><li>Number Systems    </a>
+		</li>
+<a href="#" class="toggle-custom" id="btn-1" data-toggle="collapse" data-target="#submenu3" aria-expanded="false"><li>Introduction to C Language    </a>
+			  <ul class="nav collapse" id="submenu3" role="menu" aria-labelledby="btn-1">
+				  <li><a href="/iii1/">Background</a></li>
+				  <li><a href="/iii2/">C Programs</a></li>
+				  <li><a href="/iii3/">Identifiers</a></li>
+				  <li><a href="/iii4/">Data Types</a></li>
+				  <li><a href="/iii5/">Variables</a></li>
+				  <li><a href="/iii6/">Constants</a></li>
+				  <li><a href="/iii7/">Input/ Output Statements</a></li>
+			  </ul>
+		</li>
+<a href="/iv1/" class="toggle-custom" id="btn-1" data-toggle="collapse" data-target="#submenu4" aria-expanded="false"><li>Arithmetic Operators and Expressions    </a>
+		</li>
+</div>
+</nav>
+    </div>
+{%endblock%}
+
+
+    <div class="col-sm-8 text-left" id="content" > 
+<div class="well" id="mybody">
+{% block content %}
+<h1 id="site1">Welcome to compileC{% if user.is_authenticated %} Mr. {{ user.username }} </h1>
+
+
+
+
+
+
+{% endif %}
+
+      {% endblock %}
+    </div>
+</div>
+{% block rightsb %}
+    <div class="col-sm-2 sidenav">
+
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+      {% endblock %}
+</div>
+</div>
+
+{% if user.is_authenticated %}
+
+
+      <div class="well"><center>
+<form action="http://localhost/backend.py" method="post">{{ user.username }}
+<textarea cols="110" rows="2" name="comment" placeholder="your comment here.."></textarea>
+<button type="submit" class="btn btn-default btn-sm">Comment</button></center>
+</form>
+
+      </div>
+
+{% endif %}
+
+<footer class="container-fluid text-center">
+ <p>Copyrights	&copy; 2018 <a href="/home" id="site"><font size="6%" color="white">compileC.</font></a>
+</footer>
+
+</body>
+</html>

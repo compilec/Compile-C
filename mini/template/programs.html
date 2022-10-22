@@ -1,0 +1,373 @@
+{% extends "home.html" %}
+{% block title %}Programs{% endblock %}
+
+ {%block active%}
+        <li><a style="color:#FFD7B8" onMouseOver="this.style.color='#FFFFFF'" onMouseOut="this.style.color='#FFD7B8'" href="/home/">Home</a></li>
+        <li><a style="color:#FFD7B8" onMouseOver="this.style.color='#FFFFFF'" onMouseOut="this.style.color='#FFD7B8'"  href="/about">About</a></li>
+
+        <li><a style="color:#FFD7B8" onMouseOver="this.style.color='#FFFFFF'"onMouseOut="this.style.color='#FFD7B8'" href="/compiler/">Compiler</a></li>
+
+        <li><a style="color:#FFD7B8" onMouseOver="this.style.color='#FFFFFF'" onMouseOut="this.style.color='#FFD7B8'" href="/contact">Contact Us</a></li>
+
+<li  class="active"><a style="color:#FFD7B8" onMouseOver="this.style.color='#FFFFFF'" onMouseOut="this.style.color='#FFD7B8'" href="/programs">Programs</a></li>
+      </ul>
+{%endblock%}
+
+{% block content %}
+
+<br>
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        Finding the maximum, minimum and sum of given set of numbers</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse">
+      <div class="panel-body"><br>#include&#60;stdio.h&#62;
+<br>#include&#60;conio.h&#62;
+<br>void main()<br>
+<br>{<br>
+int a[20], max, min, sum = 0, i, n;<br>
+clrscr();<br>
+<br>printf("Enter the size of array: \n");<br>
+scanf('%d",&n);<br>
+<br>printf( "Enter the elements of array:\n'');<br>
+for (i=0;i<n;i++) 
+scanf("%d",&a[i]);<br>
+max= a[0]:
+min =a[0];<br>
+for(i=0;i<n;i++)
+<br>{<br>
+if (a[i]> max)
+max =a[i];<br>
+if (a[j]< min)
+min=a[i];<br>
+sum =sum +a[i];<br>
+}<br>
+<br>printf("maximum=%d\n",max);<br>
+<br>printf"(minimum=%d\'n",min);<br>
+<br>printf("sum=%d\n",sum);<br>
+getch();<br>
+}<br>
+</div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+        Generating pyramid for a number</a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body"><br>/*c program for printing pyramid*/<br>
+<br>#include&#60;stdio.h&#62;
+<br># include&#60;conio.h&#62;
+<br>void main()<br>
+int r,c,sp,n,temp;<br>
+clrscr();<br>
+<br>printf "Enter the number of rows in the pyramid: ");<br>
+scanf("%d",&n);<br>
+temp=n;<br>
+for(r=1; r<=temp; r++)
+<br>{<br>
+for(sp=1; sp<=n; sp++)
+<br>printf(" ");<br>
+for(c=1 ; c<=r; c++)
+<br>{<br>
+<br>printf("%d",r);<br>
+<br>printf(" ");<br>
+}<br>
+<br>printf("\n")
+n=n-l;<br>
+}<br>
+getch();<br>
+}<br>
+</div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+        Generating Pascal triangle for a number</a>
+      </h4>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse">
+      <div class="panel-body"><br>/*C Program for Generating Pascal triangle for a number* /
+<br>#include &#60;stdio.h&#62;
+<br>#include&#60;conio.h&#62;
+<br>void main()<br>
+int rows, coef 1, space, i, j;<br>
+clrscr();<br>
+<br>printf("Enter number of rows: ");<br>
+scanf("%d",&rows);<br>
+for(i=0; i<rows; i++)
+<br>{<br>
+for(space=1 ; space <= rows-i; space++)
+<br>printf(" ");<br>
+for(j=0; j <= i; j++)
+<br>{<br>
+if(j==0;j<=i;j++)
+<br>{<br>
+if(j==0||i==0)
+coef= 1;<br>
+else<br>
+coef=coef*(i-j+1);<br>
+<br>printf("%4d", coef);<br>
+<br>printf("'n");
+}<br>
+getch();<br>
+}<br></div>
+    </div>
+  </div>
+
+
+ <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+ To convert binary to decimal      
+</a>
+      </h4>
+    </div>
+    <div id="collapse4" class="panel-collapse collapse">
+      <div class="panel-body">
+<br>/*Write a program to convert given binary number to decimal.*/<br>
+<br>#include&#60;stdio.h&#62;
+<br>#include&#60;conio.h&#62;
+<br>#include&#60;math.h&#62;
+<br>#include&#60;stdlib.h&#62;
+<br>void main()<br>
+long int decimal 0, binary ,remainder;<br>
+longint temp, i=0;<br>
+clrscr();<br>
+<br>printf("\n enter binary number \n");<br>
+scanf("%ld", &binary);<br>
+temp = binary,
+do
+<br>{<br>
+remainder=binary % 10;<br>
+if (remainder>1)
+<br>{<br>
+<br>printf ("\n invalid binary number");<br>
+exit (0);<br>
+}<br>
+Binary= binary /10;<br>
+decimal =decimal + (remainder* pow (2, i);<br>
+i++;<br>
+}<br>
+while (binary>0);<br>
+<br>printf("\n the value of binary %ld in decimal is %ld", temp, decimal);<br>
+getch();<br>
+</div>
+    </div>
+  </div>
+
+ <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+To convert binary to octal
+</a>
+      </h4>
+    </div>
+    <div id="collapse5" class="panel-collapse collapse">
+      <div class="panel-body">
+<br>/*C programming source code to convert binary to octal according to data entered by user. */<br>
+<br># include&#60;stdio.h&#62;
+<br>#include&#60;math.h&#62;
+<br>#include&#60;conio.h&#62;
+<br>void main()<br>
+<br>{<br>
+longint n;<br>
+int octal=0,decimal=0,i=0;<br>
+clrscr:
+<br>printf("Enter a binary number: ");<br>
+scanf("%1d",&n);<br>
+while(n!=0)
+<br>{<br>
+decimal=decimal+( n% 10)* pow(2,i);<br>
+++i;<br>
+n=n/ 10;<br>
+}<br>
+<br>/*At this point, the decimal variable contains corresponding decimal value of binary number. */<br>
+i=1;<br>
+while (decimal!=0)
+<br>{<br>
+octal+=(decimal%8)* i;<br>
+decimal/=8;<br>
+i*=10;<br>
+}<br>
+<br>printf("Its equivalent octal number is: %d",octal);<br>
+getch();<br>
+}<br>
+
+</div>
+    </div>
+  </div>
+
+ <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+        To convert binary to hexadecimal
+</a>
+      </h4>
+    </div>
+    <div id="collapse6" class="panel-collapse collapse">
+      <div class="panel-body">
+<br>/* C programming source code to convert binary to hexadecimal according to data entered by user. */<br>
+<br>#include&#60;stdio.h&#62;
+<br>#include&#60;math.h&#62;
+<br>#include&#60;conio.h&#62;
+<br>void main()<br>
+<br>{<br>
+longint n;<br>
+int decimal=0,i=0,hex,count=0,j=0;<br>
+char a[20];<br>
+clrscr();<br>
+<br>printf("Enter a binary number: ");<br>
+scanf("%1d",&n);<br>
+while(n!=0)
+<br>{<br>
+decimal=decimal +(n% 1 0)*pow(2,i);<br>
+++I;<br>
+n=n/10;<br>
+}<br>
+<br>/*At this point, the decimal variable contains corresponding decimal value of binary number. */<br>
+i=0;<br>
+while (decimal>0)
+<br>{<br>
+hex=decimal % 16;<br>
+decimal=decimal /16;<br>
+a[i]=hex;<br>
+if(hex==10)
+a[i]='A';<br>
+if(hex==11)
+a[i]='B';<br>
+if(hex==12)
+a[i]='C';<br>
+if (hex==13)
+a[i] ='D';<br>
+if(hex==14)
+a[i] ='E';<br>
+if(hex==15)
+a[i]='F';<br>
+i++;<br>
+count++;<br>
+for(j=count-1 ; j>=0; j--)
+<br>{<br>
+if(a[j]>=65 &&a[j]<=70)
+<br>printf("%c", a[j]);<br>
+else<br>
+<br>printf("%d", a[j]);<br>
+}<br>
+getch();<br>
+}<br>
+</div>
+    </div>
+  </div>
+
+
+ <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+        
+To convert decimal to binary
+</a>
+      </h4>
+    </div>
+    <div id="collapse7" class="panel-collapse collapse">
+      <div class="panel-body">
+<br>/* C programming source code to convert decimal to binary according to data entered by user.*/<br>
+<br>#include&#60;stdio.h&#62;
+<br>#include&#60;conio.h&#62;
+<br>void main()<br>
+<br>{<br>
+int decimal, binary, a[20], i=0, j=0, count=0;<br>
+clrscr();<br>
+<br>printf ("\n enter decimal number \n");<br>
+scanf ("%d", &decimal);<br>
+while (decimal>0)
+<br>{<br>
+binary = decimal % 2;<br>
+decimal= decimal /2;<br>
+a[i]= binary;<br>
+i++;<br>
+count++;<br>
+}<br>
+for (j=count -1;j>=0;j--)
+<br>printf("%d", a[i]);<br>
+getch();<br>
+}<br>
+</div>
+    </div>
+  </div>
+
+
+ <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+To convert octal to binary 
+</a>
+      </h4>
+    </div>
+    <div id="collapse8" class="panel-collapse collapse">
+      <div class="panel-body">
+<br>/* C programming source code to convert octal to binary according to data entered by user. */<br>
+<br>#include&#60;stdio.h&#62;
+<br>#include&#60;conio.h&#62;
+<br>void main()<br>
+int i=0;<br>
+charoctnum [100];<br>
+clrscr();<br>
+<br>printf("Enter any Octal Number: ");<br>
+scanf("%s",octnum);<br>
+<br>printf("Equivalent Binary Value = ");<br>
+while(octnum[i])
+<br>{<br>
+switch(octnum[i])
+<br>{<br>
+case '0': <br>printf("000);<br>
+break;<br>
+case '1': <br>printf("001");<br>
+break;<br>
+case'2': <br>printf("010");<br>
+break;<br>
+case '3': <br>printf("011");<br>
+break;<br>
+case'4': <br>printf("100");<br>
+break;<br>
+case '5': <br>printf("101");<br>
+break;<br>
+case '6' : <br>printf("110");<br>
+break;<br>
+case '7": <br>printf("111")
+break;<br>
+default: <br>printf("\n Invalid Octal Digit %c \n",octnum[i]);<br>
+break;<br>
+}<br>
+i++;<br>
+}<br>
+getch();<br>
+}<br>
+<br><br>
+</div>
+    </div>
+  </div>
+  </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
